@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mobile navigation</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+
+        <div class="topnav">
+
+            <a href="#home" class="active">Logo</a>
+
+            <div id="myLinks">
+                <a href="#news">Chapitre 1</a>
+                <a href="#contact">Chapitre 2</a>
+                <a href="#about">Chapitre 3</a>
+            </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+
+        </div>
+
+
+
+        <div style="padding-left:16px">
+            <h3>Vertical Mobile Navbar</h3>
+            <p>This example demonstrates how a navigation menu on a mobile/smart phone could look like.</p>
+            <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+        </div>
+
+
+
+        <section class="chapitre" id="news">
+            <h3>Chapitre 1</h3>
+        </section>
+        <section class="chapitre" id="contact">
+            <h3>Chapitre 2</h3>
+        </section>
+        <section class="chapitre" id="about">
+            <h3>Chapitre 3</h3>
+        </section>
+
+
+
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+
+    </body>
+
+</html>
