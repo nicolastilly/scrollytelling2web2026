@@ -4,88 +4,127 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SCROLLYTELLING</title>
+        <title>AOS Starter</title>
 
-        <link rel="stylesheet" href="../style.css">
+        <style>
+            /* Styles uniquement pour le conteneur phone */
+            * {
+                box-sizing: border-box;
+            }
 
-        <!-- lien aos -->
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body {
+                padding: 20px;
+                background-color: #1a1a1a;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .phone-container {
+                width: 375px;
+                max-width: 100%;
+                height: calc(100vh - 40px);
+                max-height: calc(100vh - 40px);
+                background-color: #000;
+                border-radius: 40px;
+                padding: 10px;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .phone-screen {
+                width: 100%;
+                flex: 1;
+                background-color: #fff;
+                border-radius: 30px;
+                overflow: hidden;
+                position: relative;
+                min-height: 0;
+            }
+
+            /* Iframe qui charge le contenu */
+            .phone-viewport {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+            }
+
+            /* Notch */
+            .phone-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 150px;
+                height: 25px;
+                background-color: #000;
+                border-radius: 0 0 20px 20px;
+                z-index: 10;
+            }
+
+            /* Icône retour */
+            .back-link {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                z-index: 1000;
+                width: 40px;
+                height: 40px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #1a1a1a;
+                font-size: 20px;
+                line-height: 1;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                transition: all 0.2s ease;
+            }
+
+            .back-link::before {
+                content: '←';
+                display: block;
+                line-height: 1;
+            }
+
+            .back-link:hover {
+                background-color: rgba(255, 255, 255, 1);
+                transform: scale(1.1);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+        </style>
 
     </head>
 
     <body>
 
-        <section id="couverture">
+        <a href="../index.html" class="back-link" title="Retour à l'index"></a>
 
-            <img src="images/couverture/couverture.jpg" alt="" srcset="">
-
-        </section>
-
-        <section id="s01">
-
-            <div class="div1">
-                <h1>Mobile Layouts & Grids</h1>
+        <div class="phone-container">
+            <div class="phone-screen">
+                <iframe 
+                    class="phone-viewport" 
+                    src="content.html"
+                    scrolling="yes"
+                    allowfullscreen>
+                </iframe>
             </div>
-            <div class="div2"> </div>
-
-            <div class="div3" data-aos="fade-up"> </div>
-
-            <div class="div4" data-aos="fade-up" data-aos-delay="300"> </div>
-
-        </section>
-
-
-
-        <section id="s02">
-
-            <div class="div1s02">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat auctor orci quis
-                    viverra. Duis euismod
-                    purus eu arcu sodales molestie. Phasellus sed purus quis diam fringilla dictum. Pellentesque vel
-                    felis in arcu dapibus
-                    varius. Donec mattis tempor nisi nec tincidunt. Suspendisse potenti. Sed efficitur urna ac imperdiet
-                    suscipit. Donec
-                    vitae vestibulum nibh. Etiam blandit ultricies tellus et gravida. Nunc ac nulla non justo rhoncus
-                    fringilla nec a nibh.
-                    Nulla facilisi. Donec eu tempus lorem. Maecenas faucibus mollis vehicula. Sed volutpat pharetra nisi
-                    nec facilisis.
-                    Aliquam et ultrices est.
-                    <br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat auctor orci quis
-                    viverra. Duis euismod
-                    purus eu arcu sodales molestie. Phasellus sed purus quis diam fringilla dictum. Pellentesque vel
-                    felis in arcu dapibus
-                    varius. Donec mattis tempor nisi nec tincidunt. Suspendisse potenti. Sed efficitur urna ac imperdiet
-                    suscipit. Donec
-                    vitae vestibulum nibh. Etiam blandit ultricies tellus et gravida. Nunc ac nulla non justo rhoncus
-                    fringilla nec a nibh.
-                    Nulla facilisi. Donec eu tempus lorem. Maecenas faucibus mollis vehicula. Sed volutpat pharetra nisi
-                    nec facilisis.
-                    Aliquam et ultrices est.
-                </p>
-            </div>
-
-            <div class="div2s02" data-aos="flip-left"> </div>
-
-
-            <section id="s03">
-
-                <div class="div1s03" data-aos="fade-left" data-aos-delay="300" data-aos-duration="900">
-                    <p>Nulla facilisi. Donec eu tempus lorem. Maecenas faucibus mollis vehicula.</p>
-                </div>
-
-            </section>
-
-        </section>
-
-
+        </div>
 
     </body>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-        AOS.init();
-    </script>
 
 </html>

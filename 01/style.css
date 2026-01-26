@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 body {
     margin: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-/*couverture*/
 
-#couverture img {
-    width: 100%;
-}
 
 /*section 01*/
 #s01 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 147px 220px;
+    grid-template-rows: 300px 220px;
     grid-column-gap: 16px;
     grid-row-gap: 16px;
     padding: 0 20px 0 20px;
@@ -20,7 +21,7 @@ body {
 }
 
 #s01 h1 {
-    font-size: 2em;
+    font-size: 4em;
 }
 
 .div1 {
@@ -81,9 +82,10 @@ body {
 }
 
 #s03 p {
-    font-size: 3em;
+    font-size: 2.3em;
     font-style: italic;
     text-align: right;
+    font-weight: 600;
 }
 
 .div1s03 {

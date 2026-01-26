@@ -1,169 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Document</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;1,300&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-            rel="stylesheet">
+        <title>Scrollyvideo.js Starter</title>
+        <style>
+            /* Styles uniquement pour le conteneur phone */
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body {
+                padding: 20px;
+                background-color: #1a1a1a;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .phone-container {
+                width: 375px;
+                max-width: 100%;
+                height: calc(100vh - 40px);
+                max-height: calc(100vh - 40px);
+                background-color: #000;
+                border-radius: 40px;
+                padding: 10px;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .phone-screen {
+                width: 100%;
+                flex: 1;
+                background-color: #fff;
+                border-radius: 30px;
+                overflow: hidden;
+                position: relative;
+                min-height: 0;
+            }
+
+            /* Iframe qui charge le contenu */
+            .phone-viewport {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+            }
+
+            /* Notch */
+            .phone-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 150px;
+                height: 25px;
+                background-color: #000;
+                border-radius: 0 0 20px 20px;
+                z-index: 10;
+            }
+
+            /* Icône retour */
+            .back-link {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                z-index: 1000;
+                width: 40px;
+                height: 40px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #1a1a1a;
+                font-size: 20px;
+                line-height: 1;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                transition: all 0.2s ease;
+            }
+
+            .back-link::before {
+                content: '←';
+                display: block;
+                line-height: 1;
+            }
+
+            .back-link:hover {
+                background-color: rgba(255, 255, 255, 1);
+                transform: scale(1.1);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+        </style>
     </head>
 
     <body>
+        <a href="../index.html" class="back-link" title="Retour à l'index"></a>
 
-        <div class="header">
-            <div class="hero">
+        <div class="phone-container">
+            <div class="phone-screen">
+                <iframe 
+                    class="phone-viewport" 
+                    src="content.html"
+                    scrolling="yes"
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
-
-
-
-        <div class="bloc1">
-            <div class="margeG"> </div>
-            <div class="content">
-                <h1>Lorem ipsum dolor</h1>
-                <br>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac est suscipit, lobortis augue
-                    vitae, vehicula lectus.
-                    Nunc placerat dui in lacus gravida semper. Ut at metus vitae elit scelerisque aliquet non sed erat.
-                    Quisque imperdiet
-                    dignissim diam, quis consectetur felis malesuada quis. Donec consectetur orci ut libero aliquet, sed
-                    ultrices leo
-                    facilisis. Donec ac purus in arcu euismod lacinia porta et nunc. Donec posuere vitae ante quis
-                    pulvinar. Morbi tempus
-                    tincidunt nisl sit amet varius. Donec condimentum mi mauris, ut consequat purus fermentum vel.
-                    Vestibulum ullamcorper
-                    nunc vitae auctor feugiat. Sed tincidunt ullamcorper metus a placerat. Nullam viverra ante et
-                    interdum elementum. Nulla
-                    efficitur ultricies ligula vitae mollis. Donec molestie cursus mollis. Ut congue ipsum velit, eu
-                    mollis eros vestibulum
-                    non. Donec vitae risus lobortis, tristique purus sed, egestas lacus.
-                    <br><br>
-                    Ut dictum eleifend ligula, eu tincidunt eros varius vitae. Ut erat tortor, aliquet non diam id,
-                    dapibus lacinia nunc.
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id justo
-                    tortor. Quisque
-                    tempor est felis, a scelerisque nisi malesuada eget. Vivamus eget sem id mauris volutpat mattis. Sed
-                    imperdiet ligula
-                    nec enim consequat dapibus. Vestibulum et velit mattis, dignissim ex ac, rutrum sem. Pellentesque
-                    eget dictum arcu.
-                    Curabitur sodales nunc in lacus suscipit, eget suscipit dolor consectetur. Aenean vel turpis sed
-                    lectus condimentum
-                    finibus. Donec luctus lacinia diam, sed bibendum ante gravida vitae. Morbi massa tellus, ultricies
-                    sit amet nisi quis,
-                    iaculis dignissim ligula. Nunc quis mauris quis metus tincidunt vestibulum eu eu lectus.
-
-                </p>
-
-                <div class="placeholder"></div>
-
-            </div>
-            <div class="margeD"> </div>
-        </div>
-
-
-        <div class="separateur">
-            <div class="blank"> </div>
-        </div>
-
-
-
-        <div class="horizontalScroll">
-            <div class="col">
-                <img src="../images/exemple02/01.jpg" alt="">
-            </div>
-            <div class="col">
-                <img src="../images/exemple02/02.jpg" alt="">
-            </div>
-            <div class="col">
-                <img src="../images/exemple02/03.jpg" alt="">
-            </div>
-        </div>
-
-
-        <div class="separateur">
-            <div class="blank"> </div>
-        </div>
-
-
-
-        <div class="bloc1">
-            <div class="margeG"> </div>
-            <div class="content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac est suscipit, lobortis augue
-                    vitae, vehicula lectus.
-                    Nunc placerat dui in lacus gravida semper. Ut at metus vitae elit scelerisque aliquet non sed
-                    erat.
-                    Quisque imperdiet
-                    dignissim diam, quis consectetur felis malesuada quis. Donec consectetur orci ut libero aliquet,
-                    sed
-                    ultrices leo
-                    facilisis. Donec ac purus in arcu euismod lacinia porta et nunc. Donec posuere vitae ante quis
-                    pulvinar. Morbi tempus
-                    tincidunt nisl sit amet varius. Donec condimentum mi mauris, ut consequat purus fermentum vel.
-                    Vestibulum ullamcorper
-                    nunc vitae auctor feugiat. Sed tincidunt ullamcorper metus a placerat. Nullam viverra ante et
-                    interdum elementum. Nulla
-                    efficitur ultricies ligula vitae mollis. Donec molestie cursus mollis. Ut congue ipsum velit, eu
-                    mollis eros vestibulum
-                    non. Donec vitae risus lobortis, tristique purus sed, egestas lacus.
-                    <br><br>
-                    Ut dictum eleifend ligula, eu tincidunt eros varius vitae. Ut erat tortor, aliquet non diam id,
-                    dapibus lacinia nunc.
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id
-                    justo
-                    tortor. Quisque
-                    tempor est felis, a scelerisque nisi malesuada eget. Vivamus eget sem id mauris volutpat mattis.
-                    Sed
-                    imperdiet ligula
-                    nec enim consequat dapibus. Vestibulum et velit mattis, dignissim ex ac, rutrum sem.
-                    Pellentesque
-                    eget dictum arcu.
-                    Curabitur sodales nunc in lacus suscipit, eget suscipit dolor consectetur. Aenean vel turpis sed
-                    lectus condimentum
-                    finibus. Donec luctus lacinia diam, sed bibendum ante gravida vitae. Morbi massa tellus,
-                    ultricies
-                    sit amet nisi quis,
-                    iaculis dignissim ligula. Nunc quis mauris quis metus tincidunt vestibulum eu eu lectus.
-
-                </p>
-
-                <div class="placeholder"></div>
-
-            </div>
-            <div class="margeD"> </div>
-        </div>
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-
-
-        <script>
-            gsap.to(".horizontalScroll", {
-                xPercent: -100,
-                x: () => innerWidth,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".horizontalScroll",
-                    start: "top top",
-                    end: () => innerWidth * 10,
-                    scrub: true,
-                    pin: true,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1,
-                }
-            });
-        </script>
-
     </body>
 
 </html>
