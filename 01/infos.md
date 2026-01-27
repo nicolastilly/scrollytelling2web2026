@@ -1,4 +1,4 @@
-# Explications
+# Explications AOS
 
 Le projet s'appuie sur CSS Grid pour la mise en page. Les interactions de scroll sont faites avec la librairie AOS.
 

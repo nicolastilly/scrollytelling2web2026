@@ -1,4 +1,4 @@
-# Explications
+# Explications ScrollyVideo
 
 ScrollyVideo fonctionne avec des fichiers .mp4.
 
