@@ -16,6 +16,6 @@ Ce site présente des exemples et des démos d'expériences de scroll en mobile 
 
 Les fichiers du site et le code sont organisés de la façon suivante :
 - Chaque dossier `01`, `02`, `03`... comporte les fichiers de l'exercice correspondant
-- Dans chaque dossier, le fichier `content.html` sert uniquement à l'affichaque mobile dans la page
-- Les fichiers `index.html` et `style.css` comportent eux le code de l'exercice
+- Dans chaque dossier, le fichier `index.html` sert uniquement à l'affichaque mobile dans la page
+- Les fichiers `content.html` et `style.css` comportent eux le code de l'exercice
 
