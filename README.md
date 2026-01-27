@@ -3,7 +3,6 @@
 ![screen capture](images/capture.png)
 ![screen capture 2](images/capture02.png)
 
-Démarrage le mardi 20 janvier 2026.
 
 ### Scrollytelling mobile first
 
