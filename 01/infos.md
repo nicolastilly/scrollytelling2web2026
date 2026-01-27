@@ -2,6 +2,12 @@
 
 Le projet s'appuie sur CSS Grid pour la mise en page. Les interactions de scroll sont faites avec la librairie AOS.
 
+Ajoutez le code ci-dessous avant `</head>` :
+
+```
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+```
+
 Ajoutez le code ci-dessous avant `</body>` :
 
 ```
