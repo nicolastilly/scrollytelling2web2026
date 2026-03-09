@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GSAP Scrollsmoother</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+        <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css">
+
+    </head>
+
+    <body>
+
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                <header class="header">
+                    <h1 class="heading-l heading-scroll">ScrollSmoother</h1>
+                    <button class="button">Jump to shape</button>
+                </header>
+                <div class="box box-a gradient-pink" data-speed="clamp(0.5)">a</div>
+                <div class="box box-b gradient-purple" data-speed="clamp(0.8)">b</div>
+                <img class="shape" data-speed="1.5" src="https://assets.codepen.io/16327/2D-keyframe-2.png" alt="" />
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <script>
+            gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+            // create the smooth scroller FIRST!
+            let smoother = ScrollSmoother.create({
+                smooth: 2,
+                effects: true,
+                normalizeScroll: true
+            });
+
+            // pin shape when it reaches the center of the viewport, for 300px
+            ScrollTrigger.create({
+                trigger: ".shape",
+                pin: true,
+                start: "center center",
+                end: "+=300"
+            });
+
+            document.querySelector("button").addEventListener("click", (e) => {
+                // scroll to the spot where the shape is in the center.
+                // parameters: element, smooth, position
+                smoother.scrollTo(".shape", true, "center center");
+
+                // or you could animate the scrollTop:
+                // gsap.to(smoother, {
+                // 	scrollTop: smoother.offset(".shape", "center center"),
+                // 	duration: 1
+                // });
+            });
+
+        </script>
+
+</html>

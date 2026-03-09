@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GSAP Scrollsmoother</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Flip.min.js"></script>
+
+        <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/xxmzBrw.css">
+
+    </head>
+
+    <body>
+
+        <div class="spacer">
+            scroll down
+        </div>
+        <div class="main">
+            <div class="container initial">
+                <div class="box"></div>
+            </div>
+            <div class="container second">
+                <div class="marker"></div>
+            </div>
+            <div class="container third">
+                <div class="marker"></div>
+            </div>
+        </div>
+
+        <div class="spacer final"></div>
+
+
+
+        <script>
+            console.clear();
+
+            gsap.registerPlugin(Flip, ScrollTrigger);
+
+            let flipCtx;
+
+            const createTimeline = () => {
+                flipCtx && flipCtx.revert();
+
+                flipCtx = gsap.context(() => {
+                    const secondState = Flip.getState(".second .marker");
+                    const thirdState = Flip.getState(".third .marker");
+                    const flipConfig = {
+                        ease: "none",
+                        duration: 1
+                    };
+
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".container.initial",
+                            start: "clamp(top center)",
+                            endTrigger: ".final",
+                            end: "clamp(top center)",
+                            scrub: 1
+                            // markers: true
+                        }
+                    });
+
+                    tl.add(Flip.fit(".box", secondState, flipConfig)).add(
+                        Flip.fit(".box", thirdState, flipConfig),
+                        "+=0.5"
+                    );
+                });
+            };
+
+            createTimeline();
+
+            window.addEventListener("resize", createTimeline);
+
+
+        </script>
+
+</html>

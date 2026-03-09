@@ -1,0 +1,24 @@
+body {
+    height: 400vh;
+    background-color: aquamarine;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Motion path : section et SVG */
+.motion-path-section {
+    width: 100%;
+    position: relative;
+}
+
+.motion-path-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
