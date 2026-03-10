@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GSAP Draggable</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Draggable.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/InertiaPlugin.min.js"></script>
+
+        <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css">
+
+
+
+    </head>
+
+    <body>
+
+
+        <div class="container">
+
+            <div class="wrapper">
+                <div class="flair flair--3b"></div>
+            </div>
+
+
+        </div>
+
+
+
+        <script>
+
+
+            gsap.registerPlugin(Draggable, InertiaPlugin);
+
+            Draggable.create(".flair--1", {
+                type: "x",
+                bounds: ".container"
+            });
+
+            Draggable.create(".flair--3b", {
+                type: "rotation",
+                inertia: true
+            });
+
+            Draggable.create(".flair--4b", {
+                bounds: ".container",
+                inertia: true
+            });
+
+
+
+
+        </script>
+
+</html>
